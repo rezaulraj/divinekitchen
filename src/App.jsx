@@ -9,7 +9,7 @@ function App() {
       {/* Primary route */}
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

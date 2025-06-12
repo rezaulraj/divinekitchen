@@ -8,7 +8,7 @@ const MainHeader = () => {
   const [activeSubmenu, setActiveSubmenu] = useState(null);
 
   const navItems = [
-    { label: "Home", path: "/home" },
+    { label: "Home", path: "/" },
     {
       label: "Restaurants",
       path: "/restaurants",
@@ -52,7 +52,7 @@ const MainHeader = () => {
             transition={{ duration: 0.5 }}
             className="flex-shrink-0"
           >
-            <a href="/home">
+            <a href="/">
               <img src={logo} alt="Company Logo" className="h-12 md:h-16" />
             </a>
           </motion.div>
