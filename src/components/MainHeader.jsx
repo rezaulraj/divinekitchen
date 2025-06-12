@@ -52,7 +52,7 @@ const MainHeader = () => {
             transition={{ duration: 0.5 }}
             className="flex-shrink-0"
           >
-            <a href="/">
+            <a href="/home">
               <img src={logo} alt="Company Logo" className="h-12 md:h-16" />
             </a>
           </motion.div>
