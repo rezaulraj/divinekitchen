@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "/logo1.png";
 import { FiChevronDown, FiX, FiMenu } from "react-icons/fi";
-
+import BookingPopup from "./BookingPopup";
 const MainHeader = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
-
+  const [showBookingPopup, setShowBookingPopup] = useState(false);
   const navItems = [
     { label: "Home", path: "/" },
     {
@@ -35,6 +35,9 @@ const MainHeader = () => {
     setActiveSubmenu(activeSubmenu === index ? null : index);
   };
 
+  const toggleBookingPopup = () => {
+    setShowBookingPopup(!showBookingPopup);
+  };
   return (
     <header className="w-full bg-white shadow-md">
       {/* Top Banner */}
@@ -94,10 +97,17 @@ const MainHeader = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={toggleBookingPopup}
               className="bg-gradient-to-r from-[#ff2709] to-[#ffaa13] text-white px-6 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300"
             >
               Book Now
             </motion.button>
+
+            <AnimatePresence>
+              {showBookingPopup && (
+                <BookingPopup onClose={toggleBookingPopup} />
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Mobile Menu Button */}
@@ -167,11 +177,19 @@ const MainHeader = () => {
                 </div>
               ))}
               <motion.button
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full mt-4 bg-gradient-to-r from-[#ff2709] to-[#ffaa13] text-white px-6 py-3 rounded-full font-medium shadow-md mb-4"
+                onClick={toggleBookingPopup}
+                className="bg-gradient-to-r from-[#ff2709] to-[#ffaa13] text-white px-6 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300"
               >
                 Book Now
               </motion.button>
+
+              <AnimatePresence>
+                {showBookingPopup && (
+                  <BookingPopup onClose={toggleBookingPopup} />
+                )}
+              </AnimatePresence>
             </div>
           </motion.div>
         )}

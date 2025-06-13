@@ -2,6 +2,7 @@ import React from "react";
 import Heropage from "./Heropage";
 import AboutHome from "./AboutHome";
 import MenuHome from "./MenuHome";
+import GalleryHome from "./GalleryHome";
 
 const HomePage = () => {
   return (
@@ -9,6 +10,7 @@ const HomePage = () => {
       <Heropage />
       <AboutHome />
       <MenuHome />
+      <GalleryHome />
     </div>
   );
 };

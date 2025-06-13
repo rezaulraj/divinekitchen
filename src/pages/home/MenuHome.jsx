@@ -1,7 +1,7 @@
 import React from "react";
 import manestach from "../../assets/images/home/divinebird2.png?url";
 import menu1 from "../../assets/images/menu/me1.jpg?url";
-import menu2 from "../../assets/images/menu/me2.jpg?url";
+import menu2 from "../../assets/images/menu/ba.jpg?url";
 import menu3 from "../../assets/images/menu/me3.jpg?url";
 import menu4 from "../../assets/images/menu/me4.jpg?url";
 import { FaArrowRight } from "react-icons/fa6";
@@ -10,22 +10,22 @@ const MenuHome = () => {
   const menuList = [
     {
       image: menu1,
-      text: "Main Menu",
+      text: "Full Menu",
       pdf: "/pdfs/main-menu.pdf",
     },
     {
       image: menu2,
-      text: "Wine List",
+      text: "Beverage Menu",
       pdf: "/pdfs/wine-list.pdf",
     },
     {
       image: menu3,
-      text: "Cocktail Menu",
+      text: "Cocktail List",
       pdf: "/pdfs/cocktail-menu.pdf",
     },
     {
       image: menu4,
-      text: "Sommeliers",
+      text: "Wine Experts",
       pdf: "/pdfs/sommeliers.pdf",
     },
   ];
@@ -41,7 +41,7 @@ const MenuHome = () => {
   };
 
   return (
-    <section className="bg-thirary py-16 px-4">
+    <section id="our-menus" className="bg-thirary py-16 px-4 ">
       <div className="max-w-screen-xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -66,7 +66,7 @@ const MenuHome = () => {
               className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {/* Menu Image */}
-              <div className="h-64 overflow-hidden">
+              <div className="h-72 overflow-hidden">
                 <img
                   src={menu.image}
                   alt={menu.text}
@@ -83,7 +83,7 @@ const MenuHome = () => {
                 {/* Download Button */}
                 <button
                   onClick={() => handleDownload(menu.pdf)}
-                  className="flex items-center justify-center gap-2 bg-[#ff2709] hover:bg-[#e62208] text-white py-2 px-4 rounded-full transition-colors duration-300"
+                  className="flex items-center justify-center gap-2 bg-[#ff2709] hover:bg-[#e62208] text-white py-2 px-4 rounded-full transition-colors duration-300 uppercase italic text-sm font-semibold"
                 >
                   <span>View Menu</span>
                   <FaArrowRight className="text-lg" />
@@ -101,7 +101,7 @@ const MenuHome = () => {
           {/* Gradient Border Button */}
           <div className="p-[2px] border-white border rounded-md hover:-translate-y-2 transition-transform duration-300 hover:scale-105">
             <button className=" text-white px-8 py-3 uppercase text-lg font-semibold ">
-              Make an Enquiry
+              More information
             </button>
           </div>
         </div>
