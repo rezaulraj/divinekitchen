@@ -1,10 +1,10 @@
 import React from "react";
-import HeroRestorant from "./HeroRestorant";
+import HeroCafeBatch from "./HeroCafeBatch";
 
 const RestorantPage = () => {
   return (
     <div className="min-h-screen">
-      <HeroRestorant />
+      <HeroCafeBatch />
     </div>
   );
 };

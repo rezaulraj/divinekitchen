@@ -11,13 +11,13 @@ const MainHeader = () => {
     { label: "Home", path: "/" },
     {
       label: "Restaurants",
-      path: "/restaurants",
+      // path: "/restaurants",
       subNav: [
         { label: "Lookout Beach", path: "/lookout-beach" },
         { label: "Cafe Beach", path: "/cafe-beach" },
       ],
     },
-    { label: "Our Menu", path: "/#our-menus" },
+    { label: "Menus", path: "/#our-menus" },
     { label: "Wedding Ceremony", path: "/wedding-ceremony" },
     {
       label: "Events",
