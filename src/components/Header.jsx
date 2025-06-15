@@ -18,7 +18,14 @@ const Header = () => {
       ],
     },
     { label: "Our Menu", path: "/#our-menus" },
-    { label: "Wedding Ceremony", path: "/wedding-ceremony" },
+    {
+      label: "Wedding Ceremony",
+      path: "/wedding-ceremony",
+      subNav: [
+        { label: "Wedding Lookout Beach", path: "/wedding-lookout-beach" },
+        { label: "Wedding Cafe Beach", path: "/wedding-cafe-beach" },
+      ],
+    },
     {
       label: "Events",
       path: "/events",

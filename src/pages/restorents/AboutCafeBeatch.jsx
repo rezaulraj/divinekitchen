@@ -1,5 +1,5 @@
 import React from "react";
-import cafe from "../../assets/images/restorant/cafe.jpg?";
+import cafe from "../../assets/images/restorant/cafe.jpg?url";
 import {
   FaRegClock,
   FaMapMarkerAlt,
