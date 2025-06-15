@@ -31,7 +31,6 @@ const MenuHome = () => {
   ];
 
   const handleDownload = (pdfUrl) => {
-    // Create a temporary anchor element
     const link = document.createElement("a");
     link.href = pdfUrl;
     link.download = pdfUrl.split("/").pop();
@@ -68,6 +67,7 @@ const MenuHome = () => {
               {/* Menu Image */}
               <div className="h-72 overflow-hidden">
                 <img
+                loading="lazy"
                   src={menu.image}
                   alt={menu.text}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
