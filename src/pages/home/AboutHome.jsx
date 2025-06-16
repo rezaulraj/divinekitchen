@@ -42,9 +42,8 @@ const AboutHome = () => {
   return (
     <section className="max-w-screen-xl mx-auto my-16 px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-        {/* Text Content */}
         <div className="order-2 lg:order-1">
-          <h2 className="text-gray-800 text-2xl md:text-3xl font-lato font-semibold mb-4 font-merriweather">
+          <h2 className="text-gray-800 text-2xl md:text-3xl font-semibold mb-4 font-merriweather">
             About The Divine Kitchen Café & Beach
           </h2>
           <p className="font-lobster leading-relaxed text-3xl md:text-5xl lg:text-6xl text-[#ff2709] mb-6">
@@ -70,7 +69,6 @@ const AboutHome = () => {
           </button>
         </div>
 
-        {/* Image Gallery */}
         <div
           className="order-1 lg:order-2 relative h-96 lg:h-[500px] w-full rounded-xl overflow-hidden shadow-xl"
           onMouseEnter={() => setIsHovered(true)}
@@ -92,7 +90,6 @@ const AboutHome = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
           </div>
 
-          {/* Navigation Dots */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
             {imageGallery.map((_, index) => (
               <button
@@ -114,7 +111,6 @@ const AboutHome = () => {
             ))}
           </div>
 
-          {/* Image Caption */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center px-4">
             <p className="text-sm md:text-base font-lato font-medium drop-shadow-md">
               {imageGallery[currentImageIndex].alt}

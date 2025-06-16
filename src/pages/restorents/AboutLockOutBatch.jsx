@@ -5,7 +5,6 @@ import { FaRegClock, FaUmbrellaBeach, FaCocktail } from "react-icons/fa";
 const AboutLockOutBeach = () => {
   return (
     <div className="min-h-screen bg-blue-50 text-gray-800 font-sans">
-      {/* Hero Section with Image */}
       <div className="relative h-96 overflow-hidden">
         {/* <img
         //   src={beach}
@@ -24,7 +23,6 @@ const AboutLockOutBeach = () => {
         </div>
       </div>
 
-      {/* Content Section */}
       <div className="max-w-4xl mx-auto px-6 py-16">
         <div className="mb-12">
           <p className="text-lg leading-relaxed mb-6">
@@ -50,7 +48,6 @@ const AboutLockOutBeach = () => {
           </p>
         </div>
 
-        {/* Info Cards */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <div className="bg-white p-8 rounded-lg shadow-md border-l-4 border-amber-500">
             <h3 className="flex items-center text-2xl font-serif mb-4">
@@ -85,7 +82,6 @@ const AboutLockOutBeach = () => {
           </div>
         </div>
 
-        {/* CTA Button */}
         <div className="text-center">
           <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
             Reserve Now

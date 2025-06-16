@@ -27,7 +27,6 @@ const GalleryHome = () => {
         </p>
       </div>
 
-      {/* Compact image gallery */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         {galleryImages.map((image) => (
           <div

@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <footer className="bg-secondary/30 pt-12 pb-8">
       <div className="max-w-screen-xl mx-auto px-4">
-        {/* Logo and Social Media */}
         <div className="flex flex-col md:flex-row items-center justify-between border-b border-gray-400 pb-8 mb-8">
           <img
             src={logo}
@@ -29,9 +28,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Main Content */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          {/* Address and Map Section */}
           <div className="col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="h-64 md:h-80 rounded-lg overflow-hidden shadow-md">
               <iframe
@@ -46,7 +43,6 @@ const Footer = () => {
               ></iframe>
             </div>
 
-            {/* Contact Info */}
             <div className="space-y-6">
               <div>
                 <h3 className="text-lg font-semibold text-primary mb-3">
@@ -76,7 +72,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Inquiry Form */}
           <div id="contact-us" className="col-span-5">
             <h3 className="text-lg font-semibold text-primary mb-4">
               Send us a message

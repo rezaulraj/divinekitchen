@@ -37,7 +37,6 @@ const HeroWeddingCafe = () => {
     request: "",
   });
 
-  // Determine how many images to show based on screen width
   const getVisibleCount = () => {
     if (window.innerWidth < 768) return 1;
     if (window.innerWidth < 1024) return 2;
@@ -87,7 +86,7 @@ const HeroWeddingCafe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
+
     console.log("Form submitted:", formData);
     alert("Thank you for your inquiry! We will contact you soon.");
   };
@@ -99,7 +98,6 @@ const HeroWeddingCafe = () => {
 
   return (
     <div className="font-sans text-gray-800">
-      {/* Hero Section */}
       <section className="relative h-screen max-h-[800px] overflow-hidden">
         <div className="absolute inset-0 bg-black/30 z-10"></div>
         <img
@@ -115,13 +113,18 @@ const HeroWeddingCafe = () => {
           <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl">
             Where culinary excellence meets romantic seaside celebrations
           </p>
-          <button className="px-8 py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
+          <button
+            onClick={() => {
+              const section = document.querySelector("#wedding-cafe");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="px-8 py-3 bg-gradient-to-r from-amber-600 to-amber-800 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
+          >
             Plan Your Special Day
           </button>
         </div>
       </section>
 
-      {/* Introduction Section */}
       <section className="py-20 px-4 bg-amber-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-amber-800">
@@ -136,7 +139,6 @@ const HeroWeddingCafe = () => {
         </div>
       </section>
 
-      {/* Gallery Carousel */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-serif font-bold mb-12 text-center text-amber-800">
@@ -209,8 +211,7 @@ const HeroWeddingCafe = () => {
         </div>
       </section>
 
-      {/* Venue Section */}
-      <section className="py-20 px-4 bg-amber-50">
+      <section id="wedding-cafe" className="py-20 px-4 bg-amber-50">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative rounded-xl overflow-hidden shadow-xl">
             <img
@@ -340,7 +341,6 @@ const HeroWeddingCafe = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-serif font-bold mb-16 text-center text-amber-800">

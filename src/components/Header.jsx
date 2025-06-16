@@ -44,15 +44,12 @@ const Header = () => {
 
   return (
     <header className="w-full bg-white shadow-md">
-      {/* Top Banner */}
       <div className="bg-gradient-to-r from-[#ff2709] to-[#ffaa13] text-white py-2 px-4 text-center text-sm md:text-base">
         <p>✨ Special Offer: 20% off on all weekend bookings! ✨</p>
       </div>
 
-      {/* Main Header */}
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between py-4">
-          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -64,7 +61,6 @@ const Header = () => {
             </a>
           </motion.div>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item, index) => (
               <div key={index} className="relative group">
@@ -107,7 +103,6 @@ const Header = () => {
             </motion.button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="lg:hidden text-gray-800 focus:outline-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -121,7 +116,6 @@ const Header = () => {
         </nav>
       </div>
 
-      {/* Mobile Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -154,7 +148,9 @@ const Header = () => {
                       >
                         <FiChevronDown
                           className={`transition-transform duration-200 ${
-                            activeSubmenu === index ? "transform rotate-180" : ""
+                            activeSubmenu === index
+                              ? "transform rotate-180"
+                              : ""
                           }`}
                         />
                       </button>

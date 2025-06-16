@@ -37,7 +37,6 @@ const HeroWeddingBeatch = () => {
     request: "",
   });
 
-  // Determine how many images to show based on screen width
   const getVisibleCount = () => {
     if (window.innerWidth < 768) return 1;
     if (window.innerWidth < 1024) return 2;
@@ -87,7 +86,7 @@ const HeroWeddingBeatch = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
+
     console.log("Form submitted:", formData);
     alert("Thank you for your inquiry! We will contact you soon.");
   };
@@ -99,7 +98,6 @@ const HeroWeddingBeatch = () => {
 
   return (
     <section className="relative">
-      {/* Hero Image with Overlay */}
       <div className="relative h-screen max-h-[800px] overflow-hidden">
         <img
           src={heroImage}
@@ -109,7 +107,6 @@ const HeroWeddingBeatch = () => {
         />
         <div className="absolute inset-0 bg-black opacity-40"></div>
 
-        {/* Hero Content */}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-4">
             Weddings at <span className="text-amber-200">Divine Kitchen</span>
@@ -117,13 +114,18 @@ const HeroWeddingBeatch = () => {
           <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl">
             Where dreams meet the ocean, and love stories begin
           </p>
-          <button className="px-8 py-3 bg-gradient-to-r from-[#ff2709] to-[#ffaa13] text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg">
+          <button
+            onClick={() => {
+              const section = document.querySelector("#wedding-batch");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="px-8 py-3 bg-gradient-to-r from-[#ff2709] to-[#ffaa13] text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg"
+          >
             Plan Your Special Day
           </button>
         </div>
       </div>
 
-      {/* Introduction Section */}
       <div className="max-w-4xl mx-auto py-16 px-4 text-center">
         <h2 className="text-3xl font-serif font-bold mb-6 text-amber-800">
           Weddings at Divine Kitchen
@@ -136,7 +138,6 @@ const HeroWeddingBeatch = () => {
         </p>
       </div>
 
-      {/* Gallery Carousel Section */}
       <div className="py-16 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-serif font-bold mb-8 text-center text-amber-800">
@@ -215,8 +216,7 @@ const HeroWeddingBeatch = () => {
         </div>
       </div>
 
-      {/* Venue Section */}
-      <div className="py-16 px-4">
+      <div id="wedding-batch" className="py-16 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <img
@@ -244,7 +244,6 @@ const HeroWeddingBeatch = () => {
               <p className="text-gray-600">40 - 150 Guests</p>
             </div>
 
-            {/* Booking Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
@@ -329,46 +328,52 @@ const HeroWeddingBeatch = () => {
         </div>
       </div>
 
-      {/* Features Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-16 px-4 max-w-6xl mx-auto">
-        <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
-          <FaHeart className="text-4xl text-amber-500 mx-auto mb-4" />
-          <h3 className="text-xl font-serif font-bold mb-2">
-            Romantic Settings
-          </h3>
-          <p className="text-gray-600">
-            Breathtaking ocean views and intimate beachfront venues
-          </p>
-        </div>
+      <div className="space-y-8">
+        <h2 className="text-3xl font-serif font-bold mb-16 text-center text-amber-800">
+          Why Choose Divine Kitchen
+        </h2>
 
-        <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
-          <FaGlassCheers className="text-4xl text-amber-500 mx-auto mb-4" />
-          <h3 className="text-xl font-serif font-bold mb-2">
-            Gourmet Catering
-          </h3>
-          <p className="text-gray-600">
-            Exquisite menus crafted by our award-winning chefs
-          </p>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-16 px-4 max-w-6xl mx-auto">
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+            <FaHeart className="text-4xl text-amber-500 mx-auto mb-4" />
+            <h3 className="text-xl font-serif font-bold mb-2">
+              Romantic Settings
+            </h3>
+            <p className="text-gray-600">
+              Breathtaking ocean views and intimate beachfront venues
+            </p>
+          </div>
 
-        <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
-          <FaRing className="text-4xl text-amber-500 mx-auto mb-4" />
-          <h3 className="text-xl font-serif font-bold mb-2">Custom Packages</h3>
-          <p className="text-gray-600">
-            Tailored experiences for your perfect celebration
-          </p>
-        </div>
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+            <FaGlassCheers className="text-4xl text-amber-500 mx-auto mb-4" />
+            <h3 className="text-xl font-serif font-bold mb-2">
+              Gourmet Catering
+            </h3>
+            <p className="text-gray-600">
+              Exquisite menus crafted by our award-winning chefs
+            </p>
+          </div>
 
-        <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
-          <FaCamera className="text-4xl text-amber-500 mx-auto mb-4" />
-          <h3 className="text-xl font-serif font-bold mb-2">Photo Ready</h3>
-          <p className="text-gray-600">
-            Stunning backdrops for unforgettable wedding photos
-          </p>
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+            <FaRing className="text-4xl text-amber-500 mx-auto mb-4" />
+            <h3 className="text-xl font-serif font-bold mb-2">
+              Custom Packages
+            </h3>
+            <p className="text-gray-600">
+              Tailored experiences for your perfect celebration
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow">
+            <FaCamera className="text-4xl text-amber-500 mx-auto mb-4" />
+            <h3 className="text-xl font-serif font-bold mb-2">Photo Ready</h3>
+            <p className="text-gray-600">
+              Stunning backdrops for unforgettable wedding photos
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Testimonial Section */}
       <div className="bg-amber-50 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-serif font-bold mb-8 text-gray-800">
@@ -382,9 +387,6 @@ const HeroWeddingBeatch = () => {
             </p>
             <p className="font-semibold text-amber-600">- Sarah & Michael</p>
           </div>
-          {/* <button className="px-6 py-2 border border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white rounded-full transition-colors">
-            View More Testimonials
-          </button> */}
         </div>
       </div>
     </section>

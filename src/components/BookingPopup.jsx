@@ -31,7 +31,7 @@ const BookingPopup = ({ onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
+
     console.log("Booking submitted:", { date: selectedDate, ...formData });
     onClose();
   };
@@ -46,7 +46,6 @@ const BookingPopup = ({ onClose }) => {
         className="bg-white rounded-xl shadow-2xl max-w-4xl w-full overflow-hidden"
       >
         <div className="flex flex-col md:flex-row">
-          {/* Calendar Section */}
           <div className="bg-gradient-to-br from-[#ff2709] to-[#ffaa13] p-6 text-white md:w-1/3">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold">Booking at Divine Kitchen</h2>
@@ -73,10 +72,8 @@ const BookingPopup = ({ onClose }) => {
             />
           </div>
 
-          {/* Form Section */}
           <div className="p-6 md:w-2/3">
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Number of Guests */}
               <div className="relative">
                 <div className="flex items-center text-gray-500 mb-1">
                   <FiUsers className="mr-2" />
@@ -100,7 +97,6 @@ const BookingPopup = ({ onClose }) => {
                 </select>
               </div>
 
-              {/* Time of Arrival */}
               <div className="relative">
                 <div className="flex items-center text-gray-500 mb-1">
                   <FiClock className="mr-2" />
@@ -130,7 +126,6 @@ const BookingPopup = ({ onClose }) => {
                 </select>
               </div>
 
-              {/* Table Preference */}
               <div className="relative">
                 <div className="flex items-center text-gray-500 mb-1">
                   <FiUsers className="mr-2" />
@@ -156,7 +151,6 @@ const BookingPopup = ({ onClose }) => {
                 </select>
               </div>
 
-              {/* Full Name */}
               <div className="relative">
                 <div className="flex items-center text-gray-500 mb-1">
                   <FiUser className="mr-2" />
@@ -175,7 +169,6 @@ const BookingPopup = ({ onClose }) => {
                 />
               </div>
 
-              {/* Email */}
               <div className="relative">
                 <div className="flex items-center text-gray-500 mb-1">
                   <FiMail className="mr-2" />
