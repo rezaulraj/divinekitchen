@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaRegClock,
   FaMapMarkerAlt,
@@ -16,11 +17,54 @@ import evening from "../../assets/images/restorant/evening.jpg?url";
 import Wine from "../../assets/images/restorant/wine-dinner.webp?url";
 import coffee from "../../assets/images/restorant/coffee.jpg?url";
 
+// Animation variants
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.8 } },
+};
+
+const slideInFromLeft = {
+  hidden: { opacity: 0, x: -100 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+};
+
+const slideInFromRight = {
+  hidden: { opacity: 0, x: 100 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+};
+
+const scaleUp = {
+  hidden: { opacity: 0, scale: 0.9 },
+  show: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+};
+
 const AboutCafeBeatch = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-amber-100">
+      {/* Hero Section */}
       <div className="flex flex-col md:flex-row h-screen">
-        <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden order-1 md:order-2">
+        {/* Image Side */}
+        <motion.div
+          className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden order-1 md:order-2"
+          initial="hidden"
+          animate="show"
+          variants={fadeIn}
+        >
           <img
             src={cafeImage}
             alt="Divine Kitchen restaurant"
@@ -28,30 +72,56 @@ const AboutCafeBeatch = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 md:bg-gradient-to-l md:from-black md:to-transparent"></div>
 
-          <div className="absolute bottom-8 left-0 right-0 flex justify-center md:hidden">
-            <button className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-xl">
+          <motion.div
+            className="absolute bottom-8 left-0 right-0 flex justify-center md:hidden"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <motion.button
+              className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-xl"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Book Now
-            </button>
-          </div>
-        </div>
+            </motion.button>
+          </motion.div>
+        </motion.div>
 
-        <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 md:p-12 bg-white order-2 md:order-1">
+        {/* Text Side */}
+        <motion.div
+          className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 md:p-12 bg-white order-2 md:order-1"
+          initial="hidden"
+          animate="show"
+          variants={slideInFromLeft}
+        >
           <div className="max-w-md mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-amber-600 mb-6 font-serif">
+            <motion.h1
+              className="text-4xl md:text-5xl font-bold text-amber-600 mb-6 font-serif"
+              variants={item}
+            >
               Cafe Beach
-            </h1>
-            <p className="text-xl text-amber-500 italic mb-8">
+            </motion.h1>
+            <motion.p
+              className="text-xl text-amber-500 italic mb-8"
+              variants={item}
+            >
               Zandvoort's Favorite
-            </p>
+            </motion.p>
 
-            <div className="space-y-6 text-gray-700 mb-10">
-              <p>
+            <motion.div
+              className="space-y-6 text-gray-700 mb-10"
+              variants={container}
+              initial="hidden"
+              animate="show"
+            >
+              <motion.p variants={item}>
                 Divine Kitchen embraces a free-spirited dining culture. It is
                 perfectly situated along the beautiful coastline of Zandvoort,
                 offering stunning views and a tranquil atmosphere.
-              </p>
+              </motion.p>
 
-              <p>
+              <motion.p variants={item}>
                 With its unique charm and welcoming vibe, Divine Kitchen
                 captures the essence of Zandvoort's lively energy while
                 providing a peaceful escape,{" "}
@@ -59,45 +129,69 @@ const AboutCafeBeatch = () => {
                   'A world away'
                 </span>{" "}
                 in the heart of this seaside town.
-              </p>
+              </motion.p>
 
-              <div className="flex items-center text-amber-800">
+              <motion.div
+                className="flex items-center text-amber-800"
+                variants={item}
+              >
                 <FaMapMarkerAlt className="mr-2 text-amber-600" />
                 <span>Zandvoort Beach, Netherlands</span>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="hidden md:block text-center">
-              <button className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+            <motion.div
+              className="hidden md:block text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              <motion.button
+                className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Book Now
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
 
-            <div className="grid grid-cols-2 gap-4 mt-12">
-              <div className="flex items-center">
+            <motion.div
+              className="grid grid-cols-2 gap-4 mt-12"
+              variants={container}
+              initial="hidden"
+              animate="show"
+            >
+              <motion.div className="flex items-center" variants={item}>
                 <FaRegClock className="text-amber-600 mr-2" />
                 <span>12PM - 11PM</span>
-              </div>
-              <div className="flex items-center">
+              </motion.div>
+              <motion.div className="flex items-center" variants={item}>
                 <FaUtensils className="text-amber-600 mr-2" />
                 <span>Ocean View</span>
-              </div>
-              <div className="flex items-center">
+              </motion.div>
+              <motion.div className="flex items-center" variants={item}>
                 <FaWineGlassAlt className="text-amber-600 mr-2" />
                 <span>Wine Pairing</span>
-              </div>
-              <div className="flex items-center">
+              </motion.div>
+              <motion.div className="flex items-center" variants={item}>
                 <FaBirthdayCake className="text-amber-600 mr-2" />
                 <span>Private Events</span>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
+      {/* Content Sections */}
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
+        <motion.div
+          className="grid md:grid-cols-2 gap-12"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={container}
+        >
+          <motion.div variants={item}>
             <h2 className="text-3xl font-bold text-amber-600 mb-6 font-serif">
               Our Philosophy
             </h2>
@@ -114,53 +208,84 @@ const AboutCafeBeatch = () => {
                 experiences that keep guests coming back.
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div variants={item}>
             <h2 className="text-3xl font-bold text-amber-600 mb-6 font-serif">
               Dining Experiences
             </h2>
             <div className="space-y-6">
-              <div className="border-l-4 border-amber-500 pl-4">
+              <motion.div
+                className="border-l-4 border-amber-500 pl-4"
+                whileHover={{ scale: 1.02 }}
+              >
                 <h3 className="text-xl font-medium text-amber-600">
                   Chef's Table
                 </h3>
                 <p className="text-gray-700">
                   An intimate culinary journey with personalized menu creations.
                 </p>
-              </div>
-              <div className="border-l-4 border-amber-500 pl-4">
+              </motion.div>
+              <motion.div
+                className="border-l-4 border-amber-500 pl-4"
+                whileHover={{ scale: 1.02 }}
+              >
                 <h3 className="text-xl font-medium text-amber-600">
                   Sunset Dining
                 </h3>
                 <p className="text-gray-700">
                   Reserve our prime ocean-view tables for golden hour.
                 </p>
-              </div>
-              <div className="border-l-4 border-amber-500 pl-4">
+              </motion.div>
+              <motion.div
+                className="border-l-4 border-amber-500 pl-4"
+                whileHover={{ scale: 1.02 }}
+              >
                 <h3 className="text-xl font-medium text-amber-600">
                   Private Events
                 </h3>
                 <p className="text-gray-700">
                   Customized menus and dedicated service for special occasions.
                 </p>
-              </div>
+              </motion.div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="mt-20 max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-amber-600 text-center mb-16 font-serif">
+        {/* Services Section */}
+        <motion.div
+          className="mt-20 max-w-6xl mx-auto px-6"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+        >
+          <motion.h2
+            className="text-4xl font-bold text-amber-600 text-center mb-16 font-serif"
+            variants={item}
+          >
             Our Cafe Services
-          </h2>
+          </motion.h2>
 
           <div className="relative">
             <div className="absolute left-1/2 h-full w-1 bg-amber-200 transform -translate-x-1/2 hidden md:block"></div>
 
-            <div className="space-y-12 md:space-y-24">
+            <motion.div
+              className="space-y-12 md:space-y-24"
+              variants={container}
+            >
               {/* Breakfast Service */}
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-1/2 p-6 md:pr-12 order-2 md:order-1">
+              <motion.div
+                className="flex flex-col md:flex-row items-center"
+                variants={item}
+              >
+                <motion.div
+                  className="md:w-1/2 p-6 md:pr-12 order-2 md:order-1"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={slideInFromLeft}
+                >
                   <div className="bg-white p-8 rounded-xl shadow-lg">
                     <div className="flex items-center mb-4">
                       <div className="bg-amber-100 p-3 rounded-full mr-4">
@@ -180,21 +305,38 @@ const AboutCafeBeatch = () => {
                       <span>7:00 AM - 11:00 AM</span>
                     </div>
                   </div>
-                </div>
-                <div className="md:w-1/2 order-1 md:order-2">
+                </motion.div>
+                <motion.div
+                  className="md:w-1/2 order-1 md:order-2"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={slideInFromRight}
+                >
                   <div className="h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-                    <img
+                    <motion.img
                       src={breakfast}
                       alt="Breakfast service"
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.5 }}
                     />
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Lunch Service */}
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-1/2 p-6 md:pl-12">
+              <motion.div
+                className="flex flex-col md:flex-row items-center"
+                variants={item}
+              >
+                <motion.div
+                  className="md:w-1/2 p-6 md:pl-12"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={slideInFromRight}
+                >
                   <div className="bg-white p-8 rounded-xl shadow-lg">
                     <div className="flex items-center mb-4">
                       <div className="bg-amber-100 p-3 rounded-full mr-4">
@@ -214,21 +356,38 @@ const AboutCafeBeatch = () => {
                       <span>11:00 AM - 3:00 PM</span>
                     </div>
                   </div>
-                </div>
-                <div className="md:w-1/2">
+                </motion.div>
+                <motion.div
+                  className="md:w-1/2"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={slideInFromLeft}
+                >
                   <div className="h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-                    <img
+                    <motion.img
                       src={lunch}
                       alt="Lunch service"
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.5 }}
                     />
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Afternoon Service */}
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-1/2 p-6 md:pr-12 order-2 md:order-1">
+              <motion.div
+                className="flex flex-col md:flex-row items-center"
+                variants={item}
+              >
+                <motion.div
+                  className="md:w-1/2 p-6 md:pr-12 order-2 md:order-1"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={slideInFromLeft}
+                >
                   <div className="bg-white p-8 rounded-xl shadow-lg">
                     <div className="flex items-center mb-4">
                       <div className="bg-amber-100 p-3 rounded-full mr-4">
@@ -248,21 +407,38 @@ const AboutCafeBeatch = () => {
                       <span>3:00 PM - 6:00 PM</span>
                     </div>
                   </div>
-                </div>
-                <div className="md:w-1/2 order-1 md:order-2">
+                </motion.div>
+                <motion.div
+                  className="md:w-1/2 order-1 md:order-2"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={slideInFromRight}
+                >
                   <div className="h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-                    <img
+                    <motion.img
                       src={evening}
                       alt="Evening service"
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.5 }}
                     />
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* Evening Service */}
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-1/2 p-6 md:pl-12">
+              <motion.div
+                className="flex flex-col md:flex-row items-center"
+                variants={item}
+              >
+                <motion.div
+                  className="md:w-1/2 p-6 md:pl-12"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={slideInFromRight}
+                >
                   <div className="bg-white p-8 rounded-xl shadow-lg">
                     <div className="flex items-center mb-4">
                       <div className="bg-amber-100 p-3 rounded-full mr-4">
@@ -281,21 +457,38 @@ const AboutCafeBeatch = () => {
                       <span>6:00 PM - 11:00 PM</span>
                     </div>
                   </div>
-                </div>
-                <div className="md:w-1/2">
+                </motion.div>
+                <motion.div
+                  className="md:w-1/2"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={slideInFromLeft}
+                >
                   <div className="h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-                    <img
+                    <motion.img
                       src={Wine}
                       alt="Evening dining"
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.5 }}
                     />
                   </div>
-                </div>
-              </div>
-              {/* unlimite */}
+                </motion.div>
+              </motion.div>
 
-              <div className="flex flex-col md:flex-row items-center bg-amber-50 rounded-2xl p-1">
-                <div className="md:w-1/2 p-6 order-2 md:order-1">
+              {/* Unlimited Coffee Service */}
+              <motion.div
+                className="flex flex-col md:flex-row items-center bg-amber-50 rounded-2xl p-1"
+                variants={item}
+              >
+                <motion.div
+                  className="md:w-1/2 p-6 order-2 md:order-1"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={slideInFromLeft}
+                >
                   <div className="bg-white p-8 rounded-xl shadow-lg border-2 border-amber-100">
                     <div className="flex items-center mb-4">
                       <div className="bg-amber-100 p-3 rounded-full mr-4">
@@ -326,13 +519,21 @@ const AboutCafeBeatch = () => {
                       <span className="font-medium">Available anytime</span>
                     </div>
                   </div>
-                </div>
-                <div className="md:w-1/2 order-1 md:order-2">
-                  <div className="h-64 md:h-80 rounded-xl overflow-hidden shadow-lg border-4 border-white">
-                    <img
+                </motion.div>
+                <motion.div
+                  className="md:w-1/2 order-1 md:order-2"
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={slideInFromRight}
+                >
+                  <div className="h-64 md:h-80 rounded-xl overflow-hidden shadow-lg border-4 border-white relative">
+                    <motion.img
                       src={coffee}
                       alt="Coffee and tea service"
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.5 }}
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
                       <p className="text-white text-sm font-light">
@@ -341,14 +542,24 @@ const AboutCafeBeatch = () => {
                       </p>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
 
           {/* Service Highlights */}
-          <div className="mt-24 grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+          <motion.div
+            className="mt-24 grid md:grid-cols-3 gap-8"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={container}
+          >
+            <motion.div
+              className="bg-white p-8 rounded-xl shadow-lg text-center"
+              variants={item}
+              whileHover={{ y: -10 }}
+            >
               <div className="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaBirthdayCake className="text-amber-600 text-2xl" />
               </div>
@@ -359,8 +570,12 @@ const AboutCafeBeatch = () => {
                 Host your celebrations with our customizable event packages and
                 dedicated service teams.
               </p>
-            </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+            </motion.div>
+            <motion.div
+              className="bg-white p-8 rounded-xl shadow-lg text-center"
+              variants={item}
+              whileHover={{ y: -10 }}
+            >
               <div className="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-amber-600"
@@ -383,8 +598,12 @@ const AboutCafeBeatch = () => {
                 Rotating menu featuring the best seasonal ingredients and
                 limited-time creations.
               </p>
-            </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+            </motion.div>
+            <motion.div
+              className="bg-white p-8 rounded-xl shadow-lg text-center"
+              variants={item}
+              whileHover={{ y: -10 }}
+            >
               <div className="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   className="w-8 h-8 text-amber-600"
@@ -407,19 +626,29 @@ const AboutCafeBeatch = () => {
                 Exclusive benefits for members including priority booking and
                 special tasting events.
               </p>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-20">
+        <motion.div
+          className="text-center mt-20"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={scaleUp}
+        >
           <h3 className="text-2xl md:text-3xl font-bold text-amber-800 mb-6 font-serif">
             Ready for your culinary journey?
           </h3>
-          <button className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold py-4 px-16 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+          <motion.button
+            className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold py-4 px-16 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             Reserve Your Table
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
     </div>
   );

@@ -1,11 +1,7 @@
 import React from "react";
-import {
-  FaCalendarAlt,
-  FaMapMarkerAlt,
-  FaGlassCheers,
-  FaUtensils,
-  FaMusic,
-} from "react-icons/fa";
+
+import { motion, useAnimation } from "framer-motion";
+
 import eventVideo from "../../assets/images/event/herovideo.mp4?url";
 import event1 from "../../assets/images/event/e1.jpg?url";
 import event2 from "../../assets/images/event/e2.jpg?url";
@@ -16,31 +12,98 @@ import event6 from "../../assets/images/event/e6.jpg?url";
 
 const HeroEventPage = () => {
   const events = [
-    {
-      image: event1,
-    },
-    {
-      image: event2,
-    },
-    {
-      image: event3,
-    },
-    {
-      image: event4,
-    },
-    {
-      image: event5,
-    },
-    {
-      image: event6,
-    },
+    { image: event1 },
+    { image: event2 },
+    { image: event3 },
+    { image: event4 },
+    { image: event5 },
+    { image: event6 },
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const fadeInVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const scaleUpVariants = {
+    hidden: { scale: 0.95, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const slideInFromLeft = {
+    hidden: { x: -100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const slideInFromRight = {
+    hidden: { x: 100, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <div className="relative">
-      
-      <div className="relative h-screen overflow-hidden">
-        <video
+    <div className="relative overflow-hidden">
+      {/* Hero Video Section */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="relative h-screen overflow-hidden"
+      >
+        <motion.video
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
           autoPlay
           loop
           muted
@@ -48,68 +111,115 @@ const HeroEventPage = () => {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src={eventVideo} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <div className="text-center px-6 max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-serif tracking-tight">
+        </motion.video>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="absolute inset-0 bg-black/50 flex items-center justify-center"
+        >
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="text-center px-6 max-w-4xl"
+          >
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1, duration: 0.8 }}
+              className="text-5xl md:text-7xl font-bold text-white mb-6 font-serif tracking-tight"
+            >
               Unforgettable Events
-            </h1>
-            <p className="text-xl md:text-2xl text-amber-100 mb-8">
+            </motion.h1>
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+              className="text-xl md:text-2xl text-amber-100 mb-8"
+            >
               Where golden sunsets meet exceptional celebrations along
               Zandvoort's coast
-            </p>
-
-            <button className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-xl">
-              Enquire About Events
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 py-16 -mt-20 relative z-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {events.map((event, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-xl shadow-2xl h-96"
+            </motion.p>
+            <motion.button
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 1.4, type: "spring" }}
+              className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-xl"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <img
+              Enquire About Events
+            </motion.button>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+      {/* Event Gallery Section */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={containerVariants}
+        className="max-w-7xl mx-auto px-6 py-16 -mt-20 relative z-10"
+      >
+        <motion.div
+          variants={containerVariants}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {events.map((event, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="group relative overflow-hidden rounded-xl shadow-2xl h-96"
+              whileHover={{ y: -10 }}
+            >
+              <motion.img
                 src={event.image}
                 alt={event.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.1 }}
               />
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <div className="flex items-center mb-2">
-                    <FaCalendarAlt className="text-amber-300 mr-2" />
-                    <span className="font-light">{event.date}</span>
-                  </div>
-                  <h3 className="text-2xl font-bold font-serif mb-2">
-                    {event.title}
-                  </h3>
-                  <p className="text-amber-100 mb-4">{event.description}</p>
-                  <button className="text-white border border-amber-300 hover:bg-amber-600 hover:border-amber-600 px-4 py-2 rounded-full text-sm transition-all">
-                    Learn More
-                  </button>
-                </div>
-              </div> */}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="text-center mt-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-amber-800 mb-6 font-serif">
+        {/* CTA Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={containerVariants}
+          className="text-center mt-20"
+        >
+          <motion.h2
+            variants={itemVariants}
+            className="text-3xl md:text-4xl font-bold text-amber-800 mb-6 font-serif"
+          >
             Ready to Create Lasting Memories?
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          </motion.h2>
+          <motion.p
+            variants={itemVariants}
+            className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
+          >
             Our event specialists will craft a completely personalized
             experience for your celebration
-          </p>
-          <button className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold py-4 px-16 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+          </motion.p>
+          <motion.button
+            variants={itemVariants}
+            className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold py-4 px-16 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0px 5px 15px rgba(0,0,0,0.2)",
+            }}
+            whileTap={{ scale: 0.98 }}
+          >
             Plan Your Event
-          </button>
-        </div>
-      </div>
+          </motion.button>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

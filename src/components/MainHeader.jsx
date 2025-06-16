@@ -81,7 +81,7 @@ const MainHeader = () => {
     );
 
   return (
-    <header className="w-full bg-white shadow-md relative z-50">
+    <header className="w-full bg-white shadow-md">
       <div className="bg-gradient-to-r from-[#ff2709] to-[#ffaa13] text-white py-2 px-4 text-center text-sm md:text-base">
         <p>✨ Special Offer: 20% off on all weekend bookings! ✨</p>
       </div>
