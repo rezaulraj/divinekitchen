@@ -49,7 +49,7 @@ const HeroEventPage = () => {
         >
           <source src={eventVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-20">
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <div className="text-center px-6 max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-serif tracking-tight">
               Unforgettable Events
