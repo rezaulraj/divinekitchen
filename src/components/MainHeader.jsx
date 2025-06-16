@@ -12,7 +12,6 @@ const MainHeader = () => {
   const [showBookingPopup, setShowBookingPopup] = useState(false);
   const navRef = useRef(null);
 
-  // Close submenus when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -82,7 +81,7 @@ const MainHeader = () => {
     );
 
   return (
-    <header className="w-full bg-white shadow-md sticky top-0 z-50">
+    <header className="w-full bg-white shadow-md relative z-50">
       <div className="bg-gradient-to-r from-[#ff2709] to-[#ffaa13] text-white py-2 px-4 text-center text-sm md:text-base">
         <p>✨ Special Offer: 20% off on all weekend bookings! ✨</p>
       </div>
@@ -207,27 +206,26 @@ const MainHeader = () => {
                           }`}
                         />
                       </button>
-                      <AnimatePresence>
-                        {activeSubmenu === index && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="pl-4 overflow-hidden"
-                          >
-                            {item.subNav.map((subItem, subIndex) => (
-                              <Link
-                                key={subIndex}
-                                to={subItem.path}
-                                className="block py-3 text-gray-600 hover:text-primary transition-colors duration-200 border-t border-gray-100"
-                                onClick={() => setMobileMenuOpen(false)}
-                              >
-                                {subItem.label}
-                              </Link>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+
+                      {activeSubmenu === index && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="pl-4 overflow-hidden"
+                        >
+                          {item.subNav.map((subItem, subIndex) => (
+                            <Link
+                              key={subIndex}
+                              to={subItem.path}
+                              className="block py-3 text-gray-600 hover:text-primary transition-colors duration-200 border-t border-gray-100"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {subItem.label}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
                     </>
                   ) : (
                     <div className="py-3">{renderLink(item)}</div>
