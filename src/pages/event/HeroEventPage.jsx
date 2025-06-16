@@ -38,7 +38,7 @@ const HeroEventPage = () => {
 
   return (
     <div className="relative">
-      {/* Hero Video */}
+      
       <div className="relative h-screen overflow-hidden">
         <video
           autoPlay
@@ -66,7 +66,6 @@ const HeroEventPage = () => {
         </div>
       </div>
 
-      {/* Event Grid */}
       <div className="max-w-7xl mx-auto px-6 py-16 -mt-20 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {events.map((event, index) => (
@@ -98,7 +97,6 @@ const HeroEventPage = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
         <div className="text-center mt-20">
           <h2 className="text-3xl md:text-4xl font-bold text-amber-800 mb-6 font-serif">
             Ready to Create Lasting Memories?
