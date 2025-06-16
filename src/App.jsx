@@ -6,6 +6,7 @@ import CafeBatch from "./pages/restorents/CafeBatch";
 import LockoutBatch from "./pages/restorents/LockoutBatch";
 import WedingBeatch from "./pages/wedding/WedingBeatch";
 import WeddingCafe from "./pages/wedding/WeddingCafe";
+import EventPage from "./pages/event/EventPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/lookout-beach" element={<LockoutBatch />} />
           <Route path="/wedding-lookout-beach" element={<WedingBeatch />} />
           <Route path="/wedding-cafe-beach" element={<WeddingCafe />} />
+          <Route path="/events" element={<EventPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
