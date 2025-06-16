@@ -29,9 +29,7 @@ const AboutLockOutBeach = () => {
   };
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
-      {/* Split Hero Section */}
       <div className="flex flex-col md:flex-row h-screen">
-        {/* Image Side (Left on desktop, top on mobile) */}
         <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden">
           <img
             src={beachImage}
@@ -40,7 +38,6 @@ const AboutLockOutBeach = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 md:bg-gradient-to-r md:from-black md:to-transparent"></div>
 
-          {/* Floating Reserve Button on Image */}
           <div className="absolute bottom-8 left-0 right-0 flex justify-center md:hidden">
             <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-xl">
               Reserve Now
@@ -48,7 +45,6 @@ const AboutLockOutBeach = () => {
           </div>
         </div>
 
-        {/* Text Side (Right on desktop, bottom on mobile) */}
         <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 md:p-12 bg-white">
           <div className="max-w-md mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-amber-500 mb-6 font-serif">
@@ -81,14 +77,12 @@ const AboutLockOutBeach = () => {
               </div>
             </div>
 
-            {/* Reserve Button - Hidden on mobile (shown on image instead) */}
             <div className="hidden md:block text-center">
               <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
                 Reserve Now
               </button>
             </div>
 
-            {/* Features Grid */}
             <div className="grid grid-cols-2 gap-4 mt-12">
               <div className="flex items-center">
                 <FaRegClock className="text-amber-500 mr-2" />
@@ -123,10 +117,8 @@ const AboutLockOutBeach = () => {
         </div>
       </div>
 
-      {/* Additional Content Section */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Left Column */}
           <div>
             <h2 className="text-3xl font-bold text-amber-500 mb-6 font-serif">
               Our Story
@@ -146,7 +138,6 @@ const AboutLockOutBeach = () => {
             </div>
           </div>
 
-          {/* Right Column */}
           <div>
             <h2 className="text-3xl font-bold text-amber-500 mb-6 font-serif">
               Signature Experiences
@@ -182,14 +173,12 @@ const AboutLockOutBeach = () => {
           </div>
         </div>
 
-        {/* Menu Section */}
         <div className="mt-20">
           <h2 className="text-4xl font-bold text-primary text-center mb-16 font-serif">
             Our Menu
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Full Menu */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="h-48 overflow-hidden">
                 <img
@@ -218,7 +207,6 @@ const AboutLockOutBeach = () => {
               </div>
             </div>
 
-            {/* Beverage Menu */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="h-48 overflow-hidden">
                 <img
@@ -252,7 +240,6 @@ const AboutLockOutBeach = () => {
               </div>
             </div>
 
-            {/* Cocktail List */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="h-48 overflow-hidden">
                 <img
@@ -286,7 +273,6 @@ const AboutLockOutBeach = () => {
               </div>
             </div>
 
-            {/* Wine Experts */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="h-48 overflow-hidden">
                 <img
@@ -319,7 +305,6 @@ const AboutLockOutBeach = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
         <div className="text-center mt-20">
           <h3 className="text-2xl md:text-3xl font-bold text-black mb-6 font-serif">
             Ready for your beachfront escape?

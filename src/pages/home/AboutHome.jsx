@@ -23,17 +23,15 @@ const AboutHome = () => {
   useEffect(() => {
     if (!isHovered) {
       const interval = setInterval(() => {
-        // Start zooming out before changing image
         setZoomState("zooming-out");
 
-        // After zoom out completes, change image and zoom in
         setTimeout(() => {
           setCurrentImageIndex(
             (prevIndex) => (prevIndex + 1) % imageGallery.length
           );
           setZoomState("zooming-in");
-        }, 500); // Matches the transition duration
-      }, 4000); // Total cycle time (3.5s display + 0.5s transition)
+        }, 500);
+      }, 4000);
 
       return () => clearInterval(interval);
     }
