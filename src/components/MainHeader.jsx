@@ -18,17 +18,24 @@ const MainHeader = () => {
       ],
     },
     { label: "Menus", path: "/#our-menus" },
-    { label: "Wedding Ceremony", path: "/wedding-ceremony" },
+    {
+      label: "Wedding Ceremony",
+      // path: "/wedding-ceremony",
+      subNav: [
+        { label: "Wedding Lookout Beach", path: "/wedding-lookout-beach" },
+        { label: "Wedding Cafe Beach", path: "/wedding-cafe-beach" },
+      ],
+    },
     {
       label: "Events",
       path: "/events",
-      subNav: [
-        { label: "Gallery Boutique", path: "/events/gallery-boutique" },
-        { label: "Milestone Moments", path: "/events/milestone-moments" },
-        { label: "Legacy", path: "/events/awards" },
-      ],
+      // subNav: [
+      //   { label: "Gallery Boutique", path: "/events/gallery-boutique" },
+      //   { label: "Milestone Moments", path: "/events/milestone-moments" },
+      //   { label: "Legacy", path: "/events/awards" },
+      // ],
     },
-    { label: "Contact Us", path: "/contact-us" },
+    { label: "Contact Us", path: "/#contact-us" },
   ];
 
   const toggleSubmenu = (index) => {

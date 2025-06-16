@@ -77,7 +77,7 @@ const Footer = () => {
           </div>
 
           {/* Inquiry Form */}
-          <div className="col-span-5">
+          <div id="contact-us" className="col-span-5">
             <h3 className="text-lg font-semibold text-primary mb-4">
               Send us a message
             </h3>

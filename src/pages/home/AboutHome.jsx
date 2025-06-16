@@ -44,7 +44,7 @@ const AboutHome = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         {/* Text Content */}
         <div className="order-2 lg:order-1">
-          <h2 className="text-gray-800 text-2xl md:text-3xl font-lato font-semibold mb-4">
+          <h2 className="text-gray-800 text-2xl md:text-3xl font-lato font-semibold mb-4 font-merriweather">
             About The Divine Kitchen Café & Beach
           </h2>
           <p className="font-lobster leading-relaxed text-3xl md:text-5xl lg:text-6xl text-[#ff2709] mb-6">

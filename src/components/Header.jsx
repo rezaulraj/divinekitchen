@@ -134,43 +134,54 @@ const Header = () => {
             <div className="container mx-auto px-4 py-2">
               {navItems.map((item, index) => (
                 <div key={index} className="border-b border-gray-100">
-                  <button
-                    className="flex items-center justify-between w-full py-3 text-gray-800 font-medium"
-                    onClick={() => item.subNav && toggleSubmenu(index)}
-                  >
+                  <div className="flex items-center justify-between w-full">
                     <a
                       href={!item.subNav ? item.path : "#"}
-                      className="flex-1 text-left"
+                      className="py-3 text-gray-800 font-medium flex-1"
+                      onClick={(e) => {
+                        if (item.subNav) {
+                          e.preventDefault();
+                          toggleSubmenu(index);
+                        }
+                      }}
                     >
                       {item.label}
                     </a>
                     {item.subNav && (
-                      <FiChevronDown
-                        className={`ml-2 transition-transform duration-200 ${
-                          activeSubmenu === index ? "transform rotate-180" : ""
-                        }`}
-                      />
+                      <button
+                        onClick={() => toggleSubmenu(index)}
+                        className="p-2 focus:outline-none"
+                      >
+                        <FiChevronDown
+                          className={`transition-transform duration-200 ${
+                            activeSubmenu === index ? "transform rotate-180" : ""
+                          }`}
+                        />
+                      </button>
                     )}
-                  </button>
+                  </div>
 
-                  {item.subNav && activeSubmenu === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="pl-4"
-                    >
-                      {item.subNav.map((subItem, subIndex) => (
-                        <a
-                          key={subIndex}
-                          href={subItem.path}
-                          className="block py-2 text-gray-600 hover:text-[#ff2709] transition-colors duration-200"
-                        >
-                          {subItem.label}
-                        </a>
-                      ))}
-                    </motion.div>
-                  )}
+                  <AnimatePresence>
+                    {item.subNav && activeSubmenu === index && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="pl-4 overflow-hidden"
+                      >
+                        {item.subNav.map((subItem, subIndex) => (
+                          <a
+                            key={subIndex}
+                            href={subItem.path}
+                            className="block py-2 text-gray-600 hover:text-[#ff2709] transition-colors duration-200"
+                          >
+                            {subItem.label}
+                          </a>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               ))}
               <motion.button
