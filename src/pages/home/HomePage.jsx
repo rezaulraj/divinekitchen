@@ -6,7 +6,6 @@ import MenuHome from "./MenuHome";
 import GalleryHome from "./GalleryHome";
 
 const HomePage = () => {
-  // Animation variants for section transitions
   const sectionVariants = {
     offscreen: {
       y: 50,
@@ -25,10 +24,8 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - No animation needed as it's the first view */}
       <Heropage />
 
-      {/* About Section */}
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -38,7 +35,6 @@ const HomePage = () => {
         <AboutHome />
       </motion.div>
 
-      {/* Menu Section */}
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -49,7 +45,6 @@ const HomePage = () => {
         <MenuHome />
       </motion.div>
 
-      {/* Gallery Section */}
       <motion.div
         initial="offscreen"
         whileInView="onscreen"

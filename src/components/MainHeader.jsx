@@ -68,7 +68,7 @@ const MainHeader = () => {
       <HashLink
         smooth
         to={item.path}
-        className="px-3 py-2 text-gray-800 hover:text-primary font-semibold transition-colors duration-300"
+        className="px-2 py-2 text-gray-800 hover:text-primary font-semibold tracking-wider leading-relaxed transition-colors duration-300"
         onClick={() => {
           setMobileMenuOpen(false);
         }}
@@ -78,7 +78,7 @@ const MainHeader = () => {
     ) : (
       <Link
         to={item.path}
-        className="px-3 py-2 text-gray-800 hover:text-primary font-semibold transition-colors duration-300"
+        className="px-2 py-2 text-gray-800 hover:text-primary font-semibold transition-colors duration-300"
         onClick={() => {
           setMobileMenuOpen(false);
         }}
@@ -114,7 +114,6 @@ const MainHeader = () => {
     );
   };
 
-  // Animation variants
   const mobileMenuVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -164,7 +163,6 @@ const MainHeader = () => {
       }`}
       ref={navRef}
     >
-      {/* Announcement bar */}
       <motion.div
         className="bg-gradient-to-r from-[#ff2709] via-red-500 to-[#ffaa13] text-white py-2 px-4 text-center text-sm md:text-base"
         initial={{ y: -50 }}
@@ -176,7 +174,6 @@ const MainHeader = () => {
 
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between py-3 md:py-4">
-          {/* Logo */}
           <motion.div
             className="flex-shrink-0"
             initial={{ scale: 0.8 }}
@@ -192,7 +189,6 @@ const MainHeader = () => {
             </Link>
           </motion.div>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 uppercase font-semibold">
             {navItems.map((item, index) => (
               <div
@@ -204,7 +200,7 @@ const MainHeader = () => {
                 {item.subNav ? (
                   <>
                     <button
-                      className={`flex items-center px-3 py-2 font-semibold uppercase ${
+                      className={`flex items-center px-3 py-2 font-semibold tracking-wider uppercase ${
                         activeSubmenu === index
                           ? "text-primary"
                           : "text-gray-800 hover:text-primary"
@@ -258,7 +254,6 @@ const MainHeader = () => {
             </motion.button>
           </div>
 
-          {/* Mobile menu toggle button */}
           <motion.button
             className="lg:hidden text-gray-800 focus:outline-none"
             aria-label="Toggle menu"
@@ -278,7 +273,6 @@ const MainHeader = () => {
         </nav>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -370,7 +364,6 @@ const MainHeader = () => {
         )}
       </AnimatePresence>
 
-      {/* Booking Popup */}
       <AnimatePresence>
         {showBookingPopup && <BookingPopup onClose={toggleBookingPopup} />}
       </AnimatePresence>

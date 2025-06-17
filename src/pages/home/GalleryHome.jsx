@@ -17,7 +17,6 @@ const GalleryHome = () => {
     { id: 6, src: gallery6, size: "md:col-span-1", direction: "right" },
   ];
 
-  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     visible: {

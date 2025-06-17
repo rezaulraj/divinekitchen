@@ -20,7 +20,6 @@ const HeroEventPage = () => {
     { image: event6 },
   ];
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -93,7 +92,6 @@ const HeroEventPage = () => {
 
   return (
     <div className="relative overflow-hidden">
-      {/* Hero Video Section */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -156,7 +154,6 @@ const HeroEventPage = () => {
         </motion.div>
       </motion.div>
 
-      {/* Event Gallery Section */}
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -186,7 +183,6 @@ const HeroEventPage = () => {
           ))}
         </motion.div>
 
-        {/* CTA Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"

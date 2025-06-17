@@ -23,7 +23,6 @@ const wineListPDF = "/pdfs/wine-list.pdf";
 const AboutLockOutBeach = () => {
   const { scrollYProgress } = useScroll();
 
-  // Parallax effects for different elements
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.3], [1, 1, 0]);
@@ -37,7 +36,6 @@ const AboutLockOutBeach = () => {
     document.body.removeChild(link);
   };
 
-  // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
@@ -67,7 +65,6 @@ const AboutLockOutBeach = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden">
-      {/* Hero Section with Parallax */}
       <div className="flex flex-col md:flex-row h-screen relative">
         <motion.div
           className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden"
@@ -212,7 +209,6 @@ const AboutLockOutBeach = () => {
         </motion.div>
       </div>
 
-      {/* Content Sections */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <motion.div
           className="grid md:grid-cols-2 gap-12"
@@ -277,7 +273,6 @@ const AboutLockOutBeach = () => {
           </motion.div>
         </motion.div>
 
-        {/* Menu Section */}
         <motion.div
           className="mt-20"
           initial={{ opacity: 0 }}
@@ -379,7 +374,6 @@ const AboutLockOutBeach = () => {
           </motion.div>
         </motion.div>
 
-        {/* CTA Section */}
         <motion.div
           className="text-center mt-20"
           initial={{ opacity: 0, y: 20 }}

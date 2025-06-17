@@ -107,7 +107,6 @@ const HeroWeddingCafe = () => {
     currentIndex + visibleCount
   );
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -236,7 +235,6 @@ const HeroWeddingCafe = () => {
         </motion.div>
       </section>
 
-      {/* Intro Section */}
       <motion.section
         initial="hidden"
         whileInView="visible"
@@ -263,7 +261,6 @@ const HeroWeddingCafe = () => {
         </div>
       </motion.section>
 
-      {/* Gallery Section */}
       <motion.section
         ref={ref}
         initial="hidden"
@@ -358,7 +355,6 @@ const HeroWeddingCafe = () => {
         </div>
       </motion.section>
 
-      {/* Venue & Form Section */}
       <motion.section
         initial="hidden"
         whileInView="visible"
@@ -393,7 +389,7 @@ const HeroWeddingCafe = () => {
               variants={itemVariants}
               className="text-2xl font-serif font-semibold text-amber-600"
             >
-              Lookout Beach
+              Cafe Beach
             </motion.h3>
 
             <motion.div
@@ -422,7 +418,6 @@ const HeroWeddingCafe = () => {
               backdrop for your special day.
             </motion.p>
 
-            {/* Booking Form */}
             <motion.form
               variants={scaleUpVariants}
               onSubmit={handleSubmit}
@@ -524,7 +519,6 @@ const HeroWeddingCafe = () => {
         </div>
       </motion.section>
 
-      {/* Why Choose Us Section */}
       <motion.section
         initial="hidden"
         whileInView="visible"

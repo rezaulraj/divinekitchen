@@ -17,7 +17,6 @@ import evening from "../../assets/images/restorant/evening.jpg?url";
 import Wine from "../../assets/images/restorant/wine-dinner.webp?url";
 import coffee from "../../assets/images/restorant/coffee.jpg?url";
 
-// Animation variants
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -56,9 +55,7 @@ const scaleUp = {
 const AboutCafeBeatch = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-amber-100">
-      {/* Hero Section */}
       <div className="flex flex-col md:flex-row h-screen">
-        {/* Image Side */}
         <motion.div
           className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden order-1 md:order-2"
           initial="hidden"
@@ -88,7 +85,6 @@ const AboutCafeBeatch = () => {
           </motion.div>
         </motion.div>
 
-        {/* Text Side */}
         <motion.div
           className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 md:p-12 bg-white order-2 md:order-1"
           initial="hidden"
@@ -182,7 +178,6 @@ const AboutCafeBeatch = () => {
         </motion.div>
       </div>
 
-      {/* Content Sections */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <motion.div
           className="grid md:grid-cols-2 gap-12"
@@ -252,7 +247,6 @@ const AboutCafeBeatch = () => {
           </motion.div>
         </motion.div>
 
-        {/* Services Section */}
         <motion.div
           className="mt-20 max-w-6xl mx-auto px-6"
           initial="hidden"
@@ -274,7 +268,6 @@ const AboutCafeBeatch = () => {
               className="space-y-12 md:space-y-24"
               variants={container}
             >
-              {/* Breakfast Service */}
               <motion.div
                 className="flex flex-col md:flex-row items-center"
                 variants={item}
@@ -325,7 +318,6 @@ const AboutCafeBeatch = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Lunch Service */}
               <motion.div
                 className="flex flex-col md:flex-row items-center"
                 variants={item}
@@ -376,7 +368,6 @@ const AboutCafeBeatch = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Afternoon Service */}
               <motion.div
                 className="flex flex-col md:flex-row items-center"
                 variants={item}
@@ -427,7 +418,6 @@ const AboutCafeBeatch = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Evening Service */}
               <motion.div
                 className="flex flex-col md:flex-row items-center"
                 variants={item}
@@ -477,7 +467,6 @@ const AboutCafeBeatch = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Unlimited Coffee Service */}
               <motion.div
                 className="flex flex-col md:flex-row items-center bg-amber-50 rounded-2xl p-1"
                 variants={item}
@@ -547,7 +536,6 @@ const AboutCafeBeatch = () => {
             </motion.div>
           </div>
 
-          {/* Service Highlights */}
           <motion.div
             className="mt-24 grid md:grid-cols-3 gap-8"
             initial="hidden"
@@ -630,7 +618,6 @@ const AboutCafeBeatch = () => {
           </motion.div>
         </motion.div>
 
-        {/* Bottom CTA */}
         <motion.div
           className="text-center mt-20"
           initial="hidden"

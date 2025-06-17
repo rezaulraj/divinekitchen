@@ -40,7 +40,7 @@ const MenuHome = () => {
     document.body.removeChild(link);
   };
 
-  // Animation variants
+
   const container = {
     hidden: { opacity: 0 },
     visible: {

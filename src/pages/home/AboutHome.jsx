@@ -32,7 +32,6 @@ const AboutHome = () => {
     }
   }, [isHovered, imageGallery.length]);
 
-  // Animation variants for scroll effects
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {

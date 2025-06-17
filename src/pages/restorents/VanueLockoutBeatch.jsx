@@ -14,7 +14,6 @@ const VanueLockoutBeatch = () => {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-6">
-       
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-amber-500 font-serif mb-4">
             Our Venue
@@ -26,9 +25,7 @@ const VanueLockoutBeatch = () => {
           </p>
         </div>
 
-       
         <div className="grid md:grid-cols-2 gap-12 mb-16">
-         
           <div className="space-y-6">
             <p className="text-lg text-gray-700">
               LockOut Beach is the perfect multi-functional space for corporate
@@ -42,7 +39,6 @@ const VanueLockoutBeatch = () => {
               special event.
             </p>
 
-           
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div className="flex items-start">
                 <div className="bg-amber-100 p-3 rounded-full mr-4">
@@ -83,7 +79,6 @@ const VanueLockoutBeatch = () => {
             </div>
           </div>
 
-          
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-lg overflow-hidden shadow-lg h-64">
               <img
@@ -116,7 +111,6 @@ const VanueLockoutBeatch = () => {
           </div>
         </div>
 
-       
         <div className="text-center mt-12">
           <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
             Enquire About Venue Hire
