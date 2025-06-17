@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
-import {
-  Routes,
-  Route,
-  useLocation,
-  useNavigationType,
-} from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 import MainLayout from "./components/MainLayout";
 import HomePage from "./pages/home/HomePage";
 import NotFoundPage from "./components/NotFoundPage";
@@ -15,19 +12,45 @@ import WeddingCafe from "./pages/wedding/WeddingCafe";
 import EventPage from "./pages/event/EventPage";
 import logo from "/logo1.png";
 import "./App.css";
+
+NProgress.configure({
+  showSpinner: false,
+  trickleSpeed: 200,
+  minimum: 0.3,
+});
+
 const RouteLoader = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
   const location = useLocation();
-  const navigationType = useNavigationType();
 
   useEffect(() => {
-    setIsLoading(true);
-    const timer = setTimeout(() => setIsLoading(false), 2000); // Adjust timing as needed
+    let timer1, timer2;
 
-    return () => clearTimeout(timer);
+    if (location.key === "default") {
+      NProgress.start();
+      timer1 = setTimeout(() => setShowLoader(true), 300);
+      timer2 = setTimeout(() => {
+        NProgress.done();
+        setShowLoader(false);
+      }, 500);
+    } else {
+      NProgress.start();
+      setShowLoader(true);
+      timer2 = setTimeout(() => {
+        NProgress.done();
+        setShowLoader(false);
+      }, 500);
+    }
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      NProgress.done();
+      setShowLoader(false);
+    };
   }, [location.key]);
 
-  if (!isLoading) return null;
+  if (!showLoader) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-90">
