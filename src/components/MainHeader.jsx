@@ -68,7 +68,7 @@ const MainHeader = () => {
       <HashLink
         smooth
         to={item.path}
-        className="px-3 py-2 text-gray-800 hover:text-primary font-medium transition-colors duration-300"
+        className="px-3 py-2 text-gray-800 hover:text-primary font-semibold transition-colors duration-300"
         onClick={() => {
           setMobileMenuOpen(false);
         }}
@@ -78,7 +78,7 @@ const MainHeader = () => {
     ) : (
       <Link
         to={item.path}
-        className="px-3 py-2 text-gray-800 hover:text-primary font-medium transition-colors duration-300"
+        className="px-3 py-2 text-gray-800 hover:text-primary font-semibold transition-colors duration-300"
         onClick={() => {
           setMobileMenuOpen(false);
         }}
@@ -159,7 +159,7 @@ const MainHeader = () => {
 
   return (
     <header
-      className={`w-full bg-white relative z-50 transition-all duration-300 ${
+      className={`w-full bg-white relative z-50 transition-all duration-300 font-lato ${
         scrolled ? "shadow-lg" : "shadow-md"
       }`}
       ref={navRef}
@@ -193,7 +193,7 @@ const MainHeader = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8 uppercase">
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 uppercase font-semibold">
             {navItems.map((item, index) => (
               <div
                 key={index}
@@ -204,7 +204,7 @@ const MainHeader = () => {
                 {item.subNav ? (
                   <>
                     <button
-                      className={`flex items-center px-3 py-2 font-medium uppercase ${
+                      className={`flex items-center px-3 py-2 font-semibold uppercase ${
                         activeSubmenu === index
                           ? "text-primary"
                           : "text-gray-800 hover:text-primary"
@@ -222,7 +222,7 @@ const MainHeader = () => {
                     <AnimatePresence>
                       {activeSubmenu === index && (
                         <motion.div
-                          className="absolute left-0 w-56 bg-white shadow-xl uppercase rounded-lg py-2 z-50 border border-gray-200"
+                          className="absolute left-0 w-64 bg-white shadow-xl uppercase font-semibold rounded-lg py-2 z-50 border border-gray-200"
                           initial="hidden"
                           animate="visible"
                           exit="exit"
@@ -232,7 +232,7 @@ const MainHeader = () => {
                             <Link
                               key={subIndex}
                               to={subItem.path}
-                              className="block px-4 py-2 text-gray-700 uppercase hover:bg-primary/10 hover:text-primary transition-colors duration-300"
+                              className="block px-4 py-2 text-gray-700 font-semibold uppercase hover:bg-primary/10 hover:text-primary transition-colors duration-300"
                               onClick={() => setActiveSubmenu(null)}
                             >
                               {subItem.label}
@@ -301,7 +301,7 @@ const MainHeader = () => {
                   {item.subNav ? (
                     <>
                       <button
-                        className="flex items-center justify-between w-full py-4 text-gray-800 font-medium hover:text-primary transition-colors duration-300"
+                        className="flex items-center justify-between w-full py-4 text-gray-800 font-semibold hover:text-primary transition-colors duration-300"
                         onClick={(e) => toggleSubmenu(index, e)}
                       >
                         <span>{item.label}</span>
