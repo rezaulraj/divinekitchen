@@ -55,7 +55,7 @@ const scaleUp = {
 const AboutCafeBeatch = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-amber-100">
-      <div className="flex flex-col md:flex-row h-screen">
+      <div className="flex flex-col md:flex-row md:h-screen">
         <motion.div
           className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden order-1 md:order-2"
           initial="hidden"
@@ -273,7 +273,7 @@ const AboutCafeBeatch = () => {
                 variants={item}
               >
                 <motion.div
-                  className="md:w-1/2 p-6 md:pr-12 order-2 md:order-1"
+                  className="md:w-1/2 p-6 md:pr-12 order-1 md:order-2"
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, margin: "-100px" }}
@@ -300,7 +300,7 @@ const AboutCafeBeatch = () => {
                   </div>
                 </motion.div>
                 <motion.div
-                  className="md:w-1/2 order-1 md:order-2"
+                  className="md:w-1/2 order-2 md:order-1"
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, margin: "-100px" }}
@@ -373,7 +373,7 @@ const AboutCafeBeatch = () => {
                 variants={item}
               >
                 <motion.div
-                  className="md:w-1/2 p-6 md:pr-12 order-2 md:order-1"
+                  className="md:w-1/2 p-6 md:pr-12 order-1 md:order-2"
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, margin: "-100px" }}
@@ -400,7 +400,7 @@ const AboutCafeBeatch = () => {
                   </div>
                 </motion.div>
                 <motion.div
-                  className="md:w-1/2 order-1 md:order-2"
+                  className="md:w-1/2 order-2 md:order-1"
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, margin: "-100px" }}
@@ -472,7 +472,7 @@ const AboutCafeBeatch = () => {
                 variants={item}
               >
                 <motion.div
-                  className="md:w-1/2 p-6 order-2 md:order-1"
+                  className="md:w-1/2 p-6 order-1 md:order-2"
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, margin: "-100px" }}
@@ -510,7 +510,7 @@ const AboutCafeBeatch = () => {
                   </div>
                 </motion.div>
                 <motion.div
-                  className="md:w-1/2 order-1 md:order-2"
+                  className="md:w-1/2 order-1 md:order-1"
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, margin: "-100px" }}
