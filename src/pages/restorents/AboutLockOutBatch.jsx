@@ -342,7 +342,7 @@ const AboutLockOutBeach = () => {
                 className="bg-white rounded-xl shadow-lg overflow-hidden"
                 variants={fadeIn}
                 whileHover="hover"
-                variants={cardHover}
+                // variants={cardHover}
               >
                 <div className="h-48 overflow-hidden">
                   <motion.img
