@@ -1,12 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import gallery1 from "../../assets/images/menu/gal1.jpg?url";
-import gallery2 from "../../assets/images/menu/gal2.jpg?url";
-import gallery3 from "../../assets/images/menu/gal3.jpg?url";
-import gallery4 from "../../assets/images/menu/gal4.jpg?url";
+import gallery1 from "../../assets/images/restorant/beach-hero.png";
 import gallery5 from "../../assets/images/menu/gal5.jpg?url";
-import gallery6 from "../../assets/images/menu/gal6.jpg?url";
-
+import gallery6 from "../../assets/images/menu/gal3.jpg?url";
+import gallery2 from "../../assets/images/restorant/sunset-session.jpeg";
+import gallery3 from "../../assets/images/restorant/beach-dining.jpeg";
+import gallery4 from "../../assets/images/restorant/vip-cabana.jpg";
 const GalleryHome = () => {
   const galleryImages = [
     { id: 1, src: gallery1, size: "md:col-span-2", direction: "left" },

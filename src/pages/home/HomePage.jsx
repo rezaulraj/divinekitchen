@@ -2,8 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import Heropage from "./Heropage";
 import AboutHome from "./AboutHome";
-import MenuHome from "./MenuHome";
+// import MenuHome from "./MenuHome";
 import GalleryHome from "./GalleryHome";
+import MenuLists from "../../components/MenuLists";
 
 const HomePage = () => {
   const sectionVariants = {
@@ -42,7 +43,7 @@ const HomePage = () => {
         variants={sectionVariants}
         transition={{ delay: 0.2 }}
       >
-        <MenuHome />
+        <MenuLists/>
       </motion.div>
 
       <motion.div

@@ -1,15 +1,15 @@
 import React from "react";
-import heroRestorant from "../../assets/images/restorant/cafebatch.jpg?url";
+import beachHero from "../../assets/images/restorant/beach-hero.png";
 import logoimg from "/logo2.png";
 import { motion } from "framer-motion";
 const HeroRestorant = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-gray-500/50 z-10"></div>
 
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroRestorant})` }}
+        style={{ backgroundImage: `url(${beachHero})` }}
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}

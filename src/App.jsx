@@ -12,6 +12,9 @@ import WeddingCafe from "./pages/wedding/WeddingCafe";
 import EventPage from "./pages/event/EventPage";
 import logo from "/logo1.png";
 import "./App.css";
+import Wedding from "./pages/event/wedding/Wedding";
+import Corporate from "./pages/event/corporate/Corporate";
+import ArtFation from "./pages/event/artfation/ArtFation";
 
 NProgress.configure({
   showSpinner: false,
@@ -86,7 +89,10 @@ function App() {
           <Route path="lookout-beach" element={<LockoutBatch />} />
           <Route path="wedding-lookout-beach" element={<WedingBeatch />} />
           <Route path="wedding-cafe-beach" element={<WeddingCafe />} />
-          <Route path="events" element={<EventPage />} />
+          <Route path="events/memories" element={<EventPage />} />
+          <Route path="events/weddings" element={<Wedding />} />
+          <Route path="events/corporate" element={<Corporate />} />
+          <Route path="events/art-fashion" element={<ArtFation />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

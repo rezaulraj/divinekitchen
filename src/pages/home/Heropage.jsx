@@ -1,16 +1,16 @@
 import React from "react";
-import heroimage from "../../assets/images/home/herobgImage.jpg";
+import beachHero from "../../assets/images/restorant/beach-hero.png";
 import logoimg from "/logo2.png";
 import { motion } from "framer-motion";
 
 const Heropage = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-gray-500/50 z-10"></div>
 
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroimage})` }}
+        style={{ backgroundImage: `url(${beachHero})` }}
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
@@ -45,7 +45,7 @@ const Heropage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          Life is more enjoyable with your presence.
+          Your presence makes every moment more delightful.
         </motion.p>
       </div>
     </section>

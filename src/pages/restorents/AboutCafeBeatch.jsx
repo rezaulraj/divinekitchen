@@ -11,10 +11,10 @@ import {
   FaBirthdayCake,
 } from "react-icons/fa";
 import cafeImage from "../../assets/images/restorant/cafe.jpg?url";
-import breakfast from "../../assets/images/restorant/breakfast.jpg?url";
-import lunch from "../../assets/images/restorant/lunch.jpg?url";
-import evening from "../../assets/images/restorant/evening.jpg?url";
-import Wine from "../../assets/images/restorant/wine-dinner.webp?url";
+import breakfast from "../../assets/images/restorant/morning.webp?url";
+import lunch from "../../assets/images/restorant/lanch.webp?url";
+import evening from "../../assets/images/restorant/afternoon.webp?url";
+import Wine from "../../assets/images/restorant/wine.webp?url";
 import coffee from "../../assets/images/restorant/coffee.jpg?url";
 
 const container = {
@@ -99,10 +99,10 @@ const AboutCafeBeatch = () => {
               Cafe Beach
             </motion.h1>
             <motion.p
-              className="text-xl text-amber-500 italic mb-8"
+              className="text-3xl md:text-4xl text-primary font-lobster leading-tight tracking-widest font-semibold italic mb-8"
               variants={item}
             >
-              Zandvoort's Favorite
+              A Beloved Seaside Escape
             </motion.p>
 
             <motion.div
@@ -112,19 +112,19 @@ const AboutCafeBeatch = () => {
               animate="show"
             >
               <motion.p variants={item}>
-                Divine Kitchen embraces a free-spirited dining culture. It is
-                perfectly situated along the beautiful coastline of Zandvoort,
-                offering stunning views and a tranquil atmosphere.
+                Divine Kitchen celebrates a laid-back, free-spirited dining
+                experience, perfectly nestled along the coastline. Here,
+                breathtaking sea views meet a calm, inviting ambiance.
               </motion.p>
 
               <motion.p variants={item}>
-                With its unique charm and welcoming vibe, Divine Kitchen
-                captures the essence of Zandvoort's lively energy while
-                providing a peaceful escape,{" "}
+                Blending vibrant charm with a sense of serene retreat, Divine
+                Kitchen offers more than just a meal; it's in the heart of the
+                beach.
                 <span className="italic text-amber-600 font-medium">
                   'A world away'
                 </span>{" "}
-                in the heart of this seaside town.
+                in the heart of the beach.
               </motion.p>
 
               <motion.div
@@ -132,7 +132,7 @@ const AboutCafeBeatch = () => {
                 variants={item}
               >
                 <FaMapMarkerAlt className="mr-2 text-amber-600" />
-                <span>Zandvoort Beach, Netherlands</span>
+                <span>Rue de l'Église, 84220 Gordes, France</span>
               </motion.div>
             </motion.div>
 
@@ -192,15 +192,15 @@ const AboutCafeBeatch = () => {
             </h2>
             <div className="space-y-6 text-gray-700">
               <p>
-                Founded with a passion for culinary excellence, Divine Kitchen
-                brings together the freshest local ingredients with
-                international flavors. Our chefs create dishes that tell a story
-                of the sea and the land.
+                At Divine Kitchen, we blend a love for culinary artistry with a
+                commitment to fresh, seasonal ingredients. Every dish is crafted
+                to reflect a harmony of land and sea, inspired by global flavors
+                and rooted in timeless technique.
               </p>
               <p>
-                Voted Zandvoort's most beloved dining spot three years running,
-                we pride ourselves on warm hospitality and memorable dining
-                experiences that keep guests coming back.
+                Celebrated for our warm hospitality and unforgettable dining,
+                Divine Kitchen has become a favorite for those who appreciate
+                exceptional food in a welcoming atmosphere.
               </p>
             </div>
           </motion.div>
@@ -218,7 +218,8 @@ const AboutCafeBeatch = () => {
                   Chef's Table
                 </h3>
                 <p className="text-gray-700">
-                  An intimate culinary journey with personalized menu creations.
+                  A personalized culinary journey with exclusive dishes curated
+                  by our head chef.
                 </p>
               </motion.div>
               <motion.div
@@ -229,7 +230,8 @@ const AboutCafeBeatch = () => {
                   Sunset Dining
                 </h3>
                 <p className="text-gray-700">
-                  Reserve our prime ocean-view tables for golden hour.
+                  Savor golden hour with reserved seating and breathtaking views
+                  — the perfect setting for a relaxed evening.
                 </p>
               </motion.div>
               <motion.div
@@ -240,7 +242,8 @@ const AboutCafeBeatch = () => {
                   Private Events
                 </h3>
                 <p className="text-gray-700">
-                  Customized menus and dedicated service for special occasions.
+                  Tailored menus, thoughtful service, and a stylish setting for
+                  your most memorable occasions.
                 </p>
               </motion.div>
             </div>

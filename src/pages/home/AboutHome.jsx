@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import about1 from "../../assets/images/home/a1.jpg";
+import about1 from "../../assets/images/restorant/beach-hero.png";
 import about2 from "../../assets/images/home/a2.jpg";
 import about3 from "../../assets/images/home/a3.jpg";
 import about4 from "../../assets/images/home/a4.jpg";
@@ -67,15 +67,15 @@ const AboutHome = () => {
             About The Divine Kitchen Café & Beach
           </h2>
 
-          <p className="font-lobster leading-relaxed text-3xl md:text-5xl lg:text-6xl text-[#ff2709] mb-6">
-            Cape Town's Favorite
+          <p className="font-lobster leading-relaxed text-2xl md:text-3xl lg:text-4xl text-[#ff2709] mb-6">
+            Where Coastal Cool Meets Effortless Charm
           </p>
 
           <div className="space-y-4">
             {[
-              "Divine Kitchen Café & Beach embraces a free-spirited beach café culture, nestled poignantly on the sea-front shoreline and flaunting her majestic views of the mighty Atlantic and Robben Island.",
-              "With iconic style and playful luxury, Divine Kitchen Café & Beach captures the quintessential charm and colloquial effervescence of the bustling city vibe while offering a quaint and relaxing escape, 'a world away' in the heart of Cape Town's social mile.",
-              "With a choice of five bars, ocean-view decks, nine private function venue areas, and on-beach dining, you're sure to find the perfect spot to capture that unforgettable magic, that is simply Divine Kitchen Café & Beach.",
+              "The Divine Kitchen Café & Beach isn’t just a place, it's a vibe. Perched right on the shoreline, this seaside sanctuary blends barefoot luxury with a splash of playful energy, offering an experience that feels both refreshingly relaxed and delightfully unexpected.",
+              "Think sun-soaked decks, breezy bars, and the gentle rhythm of waves setting the scene. Whether you're sipping cocktails at one of our five vibrant bars, celebrating in one of nine private venues, or dining with your toes in the sand, every moment is designed to feel like a mini escape, bold, beautiful, and unforgettable.",
+              "More than a café. More than a beach. It’s simply Divine.",
             ].map((paragraph, index) => (
               <motion.p
                 key={index}
@@ -141,7 +141,7 @@ const AboutHome = () => {
             ))}
           </div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -151,7 +151,7 @@ const AboutHome = () => {
             <p className="text-sm md:text-base font-lato font-medium drop-shadow-md">
               {imageGallery[currentImageIndex].alt}
             </p>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

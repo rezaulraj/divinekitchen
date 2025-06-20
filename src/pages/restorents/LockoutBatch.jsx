@@ -8,7 +8,7 @@ const LockoutBatch = () => {
     <div className="min-h-screen">
       <HeroLockoutBatch />
       <AboutLockOutBeach />
-      <VanueLockoutBeatch />
+      {/* <VanueLockoutBeatch /> */}
     </div>
   );
 };
