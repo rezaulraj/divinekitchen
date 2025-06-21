@@ -182,6 +182,7 @@ const MainHeader = () => {
 
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between py-3 md:py-4">
+          {/* Logo on the left */}
           <motion.div
             className="flex-shrink-0"
             initial={{ scale: 0.8 }}
@@ -197,87 +198,96 @@ const MainHeader = () => {
             </Link>
           </motion.div>
 
-          <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 uppercase font-semibold">
-            {navItems.map((item, index) => (
-              <div
-                key={index}
-                className="relative group"
-                onMouseEnter={() => setActiveSubmenu(index)}
-                onMouseLeave={() => setActiveSubmenu(null)}
-              >
-                {item.subNav ? (
-                  <>
-                    <button
-                      className={`flex items-center px-3 py-2 text-sm font-semibold font-lato tracking-wider uppercase ${
-                        activeSubmenu === index
-                          ? "text-primary"
-                          : "text-gray-800 hover:text-primary"
-                      } transition-colors duration-300 uppercase`}
-                    >
-                      {item.label}
-                      <motion.span
-                        animate={{ rotate: activeSubmenu === index ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
+          {/* Navigation items in the middle - hidden on mobile */}
+          <div className="hidden lg:flex flex-1 justify-center items-center mx-4">
+            <div className="flex items-center space-x-2 xl:space-x-3 uppercase font-semibold">
+              {navItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="relative group"
+                  onMouseEnter={() => setActiveSubmenu(index)}
+                  onMouseLeave={() => setActiveSubmenu(null)}
+                >
+                  {item.subNav ? (
+                    <>
+                      <button
+                        className={`flex items-center px-3 py-2 text-sm font-semibold font-lato tracking-wider uppercase ${
+                          activeSubmenu === index
+                            ? "text-primary"
+                            : "text-gray-800 hover:text-primary"
+                        } transition-colors duration-300 uppercase`}
                       >
-                        <FiChevronDown className="ml-1" />
-                      </motion.span>
-                    </button>
-
-                    <AnimatePresence>
-                      {activeSubmenu === index && (
-                        <motion.div
-                          className="absolute left-0 w-64 bg-white shadow-xl uppercase font-semibold rounded-lg py-2 z-50 border border-gray-200"
-                          initial="hidden"
-                          animate="visible"
-                          exit="exit"
-                          variants={subMenuVariants}
+                        {item.label}
+                        <motion.span
+                          animate={{
+                            rotate: activeSubmenu === index ? 180 : 0,
+                          }}
+                          transition={{ duration: 0.3 }}
                         >
-                          {item.subNav.map((subItem, subIndex) => (
-                            <Link
-                              key={subIndex}
-                              to={subItem.path}
-                              className="block px-4 py-2 text-gray-700 text-sm font-semibold font-lato uppercase hover:bg-primary/10 hover:text-primary transition-colors duration-300"
-                              onClick={() => setActiveSubmenu(null)}
-                            >
-                              {subItem.label}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </>
-                ) : (
-                  renderLink(item)
-                )}
-              </div>
-            ))}
+                          <FiChevronDown className="ml-1" />
+                        </motion.span>
+                      </button>
 
+                      <AnimatePresence>
+                        {activeSubmenu === index && (
+                          <motion.div
+                            className="absolute left-1/2 transform -translate-x-1/2 w-64 bg-white shadow-xl uppercase font-semibold rounded-lg py-2 z-50 border border-gray-200"
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            variants={subMenuVariants}
+                          >
+                            {item.subNav.map((subItem, subIndex) => (
+                              <Link
+                                key={subIndex}
+                                to={subItem.path}
+                                className="block px-4 py-2 text-gray-700 text-sm font-semibold font-lato uppercase hover:bg-primary/10 hover:text-primary transition-colors duration-300"
+                                onClick={() => setActiveSubmenu(null)}
+                              >
+                                {subItem.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
+                  ) : (
+                    renderLink(item)
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Book Now button on the right */}
+          <div className="flex items-center">
             <motion.button
               onClick={toggleBookingPopup}
-              className="bg-gradient-to-r from-[#ff2709] to-[#ffaa13] text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="hidden lg:block bg-gradient-to-r from-[#ff2709] to-[#ffaa13] text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Book Now
             </motion.button>
-          </div>
 
-          <motion.button
-            className="lg:hidden text-gray-800 focus:outline-none"
-            aria-label="Toggle menu"
-            onClick={() => {
-              setMobileMenuOpen(!mobileMenuOpen);
-              setActiveSubmenu(null);
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            {mobileMenuOpen ? (
-              <FiX className="h-6 w-6" />
-            ) : (
-              <FiMenu className="h-6 w-6" />
-            )}
-          </motion.button>
+            {/* Mobile menu button - right side */}
+            <motion.button
+              className="lg:hidden text-gray-800 focus:outline-none ml-4"
+              aria-label="Toggle menu"
+              onClick={() => {
+                setMobileMenuOpen(!mobileMenuOpen);
+                setActiveSubmenu(null);
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              {mobileMenuOpen ? (
+                <FiX className="h-6 w-6" />
+              ) : (
+                <FiMenu className="h-6 w-6" />
+              )}
+            </motion.button>
+          </div>
         </nav>
       </div>
 

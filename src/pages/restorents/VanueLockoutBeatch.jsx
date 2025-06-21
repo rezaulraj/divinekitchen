@@ -112,7 +112,13 @@ const VanueLockoutBeatch = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg">
+          <button
+            onClick={() => {
+              const section = document.querySelector("#footer");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg"
+          >
             Enquire About Venue Hire
           </button>
         </div>

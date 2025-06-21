@@ -91,6 +91,10 @@ const AboutHome = () => {
           </div>
 
           <motion.button
+            onClick={() => {
+              const section = document.querySelector("#footer");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

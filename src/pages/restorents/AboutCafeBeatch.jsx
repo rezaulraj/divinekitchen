@@ -76,6 +76,10 @@ const AboutCafeBeatch = () => {
             transition={{ delay: 0.4 }}
           >
             <motion.button
+              onClick={() => {
+                const section = document.querySelector("#footer");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -143,6 +147,10 @@ const AboutCafeBeatch = () => {
               transition={{ delay: 0.6 }}
             >
               <motion.button
+                onClick={() => {
+                  const section = document.querySelector("#footer");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-12 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -632,6 +640,10 @@ const AboutCafeBeatch = () => {
             Ready for your culinary journey?
           </h3>
           <motion.button
+            onClick={() => {
+              const section = document.querySelector("#footer");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold py-4 px-16 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

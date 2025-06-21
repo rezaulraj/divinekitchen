@@ -130,7 +130,13 @@ const LockOutBeach = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+            <button
+              onClick={() => {
+                const section = document.querySelector("#footer");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
               Reserve Now
             </button>
           </motion.div>
@@ -365,7 +371,13 @@ const LockOutBeach = () => {
                 </motion.div>
 
                 <motion.div variants={fadeIn}>
-                  <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors">
+                  <button
+                    onClick={() => {
+                      const section = document.querySelector("#footer");
+                      section?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors"
+                  >
                     Reserve Your Exclusive Experience
                   </button>
                 </motion.div>
@@ -416,7 +428,13 @@ const LockOutBeach = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-12 rounded-full text-lg shadow-xl transition-all duration-300 transform hover:scale-105">
+            <button
+              onClick={() => {
+                const section = document.querySelector("#footer");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-12 rounded-full text-lg shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
               Reserve Now
             </button>
           </motion.div>

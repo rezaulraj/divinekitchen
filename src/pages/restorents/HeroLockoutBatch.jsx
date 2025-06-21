@@ -2,6 +2,7 @@ import React from "react";
 import beachHero from "../../assets/images/restorant/beach-hero.png";
 import logoimg from "/logo2.png";
 import { motion } from "framer-motion";
+
 const HeroLockoutBatch = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
@@ -24,7 +25,7 @@ const HeroLockoutBatch = () => {
         <img
           src={logoimg}
           alt="Company Logo"
-          className="h-16 md:h-24 lg:h-32 w-auto drop-shadow-lg"
+          className="h-24 lg:h-32 w-auto drop-shadow-lg"
         />
       </motion.div>
 
@@ -46,6 +47,29 @@ const HeroLockoutBatch = () => {
         >
           Discover serenity by the waves and golden sands.
         </motion.p>
+
+        {/* Added button with related text */}
+        <motion.div
+          className="flex flex-col items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+        >
+          <p className="text-white text-lg mb-4 max-w-md">
+            Experience our beachfront dining with breathtaking sunset views
+          </p>
+          <motion.button
+            onClick={() => {
+              const section = document.querySelector("#footer");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="bg-gradient-to-r from-[#ff7e29] to-[#ffcc33] text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Reserve Your Table
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
