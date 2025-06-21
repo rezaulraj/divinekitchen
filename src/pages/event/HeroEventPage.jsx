@@ -43,53 +43,6 @@ const HeroEventPage = () => {
     },
   };
 
-  const fadeInVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        ease: "easeInOut",
-      },
-    },
-  };
-
-  const scaleUpVariants = {
-    hidden: { scale: 0.95, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const slideInFromLeft = {
-    hidden: { x: -100, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const slideInFromRight = {
-    hidden: { x: 100, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <div className="relative overflow-hidden">
       <motion.div
@@ -123,6 +76,18 @@ const HeroEventPage = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="text-center px-6 max-w-4xl"
           >
+            <motion.div
+              className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
+              <img
+                src={"/logo2.png"}
+                alt="Company Logo"
+                className="h-24 lg:h-32 w-auto drop-shadow-lg"
+              />
+            </motion.div>
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -141,6 +106,10 @@ const HeroEventPage = () => {
               Zandvoort's coast
             </motion.p>
             <motion.button
+              onClick={() => {
+                const section = document.querySelector("#footer");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 1.4, type: "spring" }}
@@ -204,6 +173,10 @@ const HeroEventPage = () => {
             experience for your celebration
           </motion.p>
           <motion.button
+            onClick={() => {
+              const section = document.querySelector("#footer");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
             variants={itemVariants}
             className="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold py-4 px-16 rounded-full text-lg transition duration-300 transform hover:scale-105 shadow-lg"
             whileHover={{

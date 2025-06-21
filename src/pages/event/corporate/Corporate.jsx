@@ -85,6 +85,7 @@ const Corporate = () => {
   return (
     <div className="font-sans text-gray-800">
       {/* Hero Section */}
+      {/* Hero Section */}
       <section className="relative h-screen max-h-[800px] overflow-hidden">
         <div className="absolute inset-0 bg-black/40 z-10"></div>
         <motion.img
@@ -126,6 +127,31 @@ const Corporate = () => {
             Impress your clients and colleagues with our premium catering
             solutions
           </motion.p>
+
+          {/* Added CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            className="flex flex-col items-center"
+          >
+            <motion.button
+              onClick={() => {
+                const section = document.querySelector("#request-corpotate");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="bg-gradient-to-r from-amber-500 to-amber-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FaBriefcase className="mr-2" />
+              Request Corporate Proposal
+            </motion.button>
+            <p className="text-white/80 text-sm mt-3 max-w-md">
+              Complete event solutions for meetings, conferences, and corporate
+              galas
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -298,7 +324,7 @@ const Corporate = () => {
       </section>
 
       {/* Inquiry Form */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section id="request-corpotate" className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial="hidden"

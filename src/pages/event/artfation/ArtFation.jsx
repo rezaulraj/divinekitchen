@@ -118,6 +118,10 @@ const ArtFashion = () => {
 
           {/* Added Button */}
           <motion.div
+            onClick={() => {
+              const section = document.querySelector("#event-book");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.8 }}
@@ -298,7 +302,7 @@ const ArtFashion = () => {
       </section>
 
       {/* Inquiry Form */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section id="event-book" className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <motion.h2
             initial="hidden"
