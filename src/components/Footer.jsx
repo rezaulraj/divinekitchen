@@ -13,11 +13,13 @@ const Footer = () => {
       <div className="max-w-screen-xl mx-auto px-4">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row items-center justify-between border-b border-gray-600 pb-8 mb-8">
-          <img
-            src={logo}
-            alt="Restaurant Logo"
-            className="h-16 md:h-20 mb-4 md:mb-0 filter brightness-0 invert"
-          />
+          <a href="/">
+            <img
+              src={logo}
+              alt="Restaurant Logo"
+              className="h-16 md:h-20 mb-4 md:mb-0 filter brightness-0 invert"
+            />
+          </a>
           <div className="flex items-center gap-6">
             <a
               href="#"
