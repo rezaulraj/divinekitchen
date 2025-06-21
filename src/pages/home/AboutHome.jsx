@@ -61,7 +61,7 @@ const AboutHome = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="order-2 lg:order-1"
+          className=""
         >
           <h2 className="text-gray-800 text-2xl md:text-3xl font-semibold mb-4 font-merriweather">
             About The Divine Kitchen Café & Beach
@@ -109,7 +109,7 @@ const AboutHome = () => {
         </motion.div>
 
         <div
-          className="order-1 lg:order-2 relative h-96 lg:h-[500px] w-full rounded-xl overflow-hidden shadow-xl"
+          className=" relative h-96 lg:h-[500px] w-full rounded-xl overflow-hidden shadow-xl"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >

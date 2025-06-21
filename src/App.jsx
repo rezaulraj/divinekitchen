@@ -22,7 +22,6 @@ NProgress.configure({
   minimum: 0.3,
 });
 
-// Circular ScrollProgress component with logo
 const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showProgress, setShowProgress] = useState(false);
@@ -34,7 +33,6 @@ const ScrollProgress = () => {
       const progress = (scrollPosition / totalHeight) * 100;
       setScrollProgress(progress);
 
-      // Show progress only when scrolling down
       if (scrollPosition > 100) {
         setShowProgress(true);
       } else {
@@ -46,7 +44,6 @@ const ScrollProgress = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Calculate stroke dashoffset for circular progress
   const radius = 30;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset =
