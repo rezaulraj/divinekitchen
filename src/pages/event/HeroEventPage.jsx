@@ -1,6 +1,6 @@
 import React from "react";
 
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 import eventVideo from "../../assets/images/event/herovideo.mp4?url";
 import event1 from "../../assets/images/event/e1.jpg?url";

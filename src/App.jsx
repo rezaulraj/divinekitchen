@@ -10,7 +10,7 @@ import LockoutBatch from "./pages/restorents/LockoutBatch";
 import WedingBeatch from "./pages/wedding/WedingBeatch";
 import WeddingCafe from "./pages/wedding/WeddingCafe";
 import EventPage from "./pages/event/EventPage";
-import logo from "/logo1.png";
+import logo from "/logo3.png";
 import "./App.css";
 import Wedding from "./pages/event/wedding/Wedding";
 import Corporate from "./pages/event/corporate/Corporate";
@@ -21,6 +21,79 @@ NProgress.configure({
   trickleSpeed: 200,
   minimum: 0.3,
 });
+
+// Circular ScrollProgress component with logo
+const ScrollProgress = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showProgress, setShowProgress] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPosition = window.scrollY;
+      const progress = (scrollPosition / totalHeight) * 100;
+      setScrollProgress(progress);
+
+      // Show progress only when scrolling down
+      if (scrollPosition > 100) {
+        setShowProgress(true);
+      } else {
+        setShowProgress(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Calculate stroke dashoffset for circular progress
+  const radius = 30;
+  const circumference = 2 * Math.PI * radius;
+  const strokeDashoffset =
+    circumference - (scrollProgress / 100) * circumference;
+
+  return (
+    <div
+      className={`fixed bottom-6 right-6 z-50 transition-opacity duration-300 bg-amber-50 rounded-full ${
+        showProgress ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <div className="relative">
+        <svg className="w-16 h-16 transform -rotate-90">
+          <circle
+            className="text-gray-200"
+            strokeWidth="4"
+            stroke="currentColor"
+            fill="transparent"
+            r={radius}
+            cx="32"
+            cy="32"
+          />
+          <circle
+            className="text-amber-500"
+            strokeWidth="4"
+            strokeDasharray={circumference}
+            strokeDashoffset={strokeDashoffset}
+            strokeLinecap="round"
+            stroke="currentColor"
+            fill="transparent"
+            r={radius}
+            cx="32"
+            cy="32"
+          />
+        </svg>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <img
+            src={logo}
+            alt="Progress"
+            className="w-8 h-8 object-contain"
+            style={{ transform: `rotate(${scrollProgress * 3.6}deg)` }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const RouteLoader = () => {
   const [showLoader, setShowLoader] = useState(true);
@@ -81,6 +154,7 @@ const RouteLoader = () => {
 function App() {
   return (
     <>
+      <ScrollProgress />
       <RouteLoader />
       <Routes>
         <Route path="/" element={<MainLayout />}>
