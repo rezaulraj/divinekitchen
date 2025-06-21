@@ -95,7 +95,7 @@ const ArtFashion = () => {
             <img
               src={"/logo2.png"}
               alt="Company Logo"
-              className="h-16 md:h-24 lg:h-32 w-auto drop-shadow-lg"
+              className="h-24 lg:h-32 w-auto drop-shadow-lg"
             />
           </motion.div>
 
